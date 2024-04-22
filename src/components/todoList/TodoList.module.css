@@ -1,0 +1,33 @@
+.container{
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  margin-left: 500px;
+}
+.box{
+  position: relative;
+  top: 130px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding-top: 40px;
+  width: 500px;
+  margin: 0 auto;
+  border:  2px solid white;
+  color: rgb(29, 232, 255);
+}
+.TaskStyle{
+  margin-top:-5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

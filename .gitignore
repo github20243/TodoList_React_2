@@ -1,0 +1,72 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+
+
+
+
+
+
+import  { useState } from 'react'
+
+const App = () => {
+  const [tasks, setTasks] = useState([])
+  const [newTask, setNewTask] = useState('')
+
+  const addTask = () => {
+    if (newTask.trim() !== '') {
+      setTasks([...tasks, newTask])
+      setNewTask('')
+    }
+  }
+
+  const deleteTask = (index) => {
+    const updatedTasks = tasks.filter((task, i) => i !== index)
+    setTasks(updatedTasks)
+  }
+
+  return (
+    <div>
+      <h1>Todo List</h1>
+      <input
+        type="text"
+        value={newTask}
+        onChange={(e) => setNewTask(e.target.value)}
+        placeholder="Enter a new task"
+      />
+      <button onClick={addTask}>Add Task</button>
+      <ul>
+        {tasks.map((task, index) => (
+          <li key={index}>
+            {task} <button onClick={() => deleteTask(index)}>Delete</button>
+          </li>
+        ))}e
+      </ul>
+    </div>
+  )
+}
+
+export default App
